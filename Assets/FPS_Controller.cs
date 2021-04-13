@@ -29,13 +29,10 @@ public class FPS_Controller : MonoBehaviour
 
     void Look()
     {
-        //if (Input.GetMouseButton(0))
-        {
-            rotY += Input.GetAxis("Mouse X") * spModRot;
-            rotX += Input.GetAxis("Mouse Y") * spModRot;
-            rotXY = Mathf.Clamp(rotX,-ROT, ROT);
-            this.transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
-        }
+        rotY += Input.GetAxis("Mouse X") * spModRot;
+        rotX += Input.GetAxis("Mouse Y") * spModRot;
+        rotXY = Mathf.Clamp(rotX,-ROT, ROT);
+        this.transform.localEulerAngles = new Vector3(-rotX, rotY, 0);
     }
 
     void WASD()
