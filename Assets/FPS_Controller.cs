@@ -13,10 +13,11 @@ public class FPS_Controller : MonoBehaviour
     float rotX = 0;
     float rotXY = 0;
     float ROT;
-    float down;
+    float down; 
     // Start is called before the first frame update
     void Start()
     {
+        this.transform.position = placeHolder.transform.position;
         ROT = this.transform.rotation.y;
     }
 
