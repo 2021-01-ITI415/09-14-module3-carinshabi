@@ -15015,7 +15015,7 @@ MonoBehaviour:
   cam: {fileID: 1421069262}
   spMod: 5
   spModRot: 10
-  placeHolder: {fileID: 0}
+  placeHolder: {fileID: 1421069260}
 --- !u!143 &1421069265
 CharacterController:
   m_ObjectHideFlags: 0
