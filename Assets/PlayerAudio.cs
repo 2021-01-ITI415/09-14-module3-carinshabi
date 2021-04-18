@@ -19,24 +19,56 @@ public class PlayerAudio : MonoBehaviour {
     private void Update()
     {
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, 5f, transform.forward, 0f, enemyMask);
-        if(hits.Length > 0)
+
+        if (hits.Length > 0)
         {
-            if (!enemyNear)
-            {
-                Debug.Log(hits[0].transform.name);
-                Debug.Log("Set enemy near");
-                auxInSnapshot.TransitionTo(0.5f);
-                enemyNear = true;
-            }
+            enemyNear = true;
         }
         else
         {
-            if(enemyNear)
-            {
-                idleSnapshot.TransitionTo(0.5f);
-                enemyNear = false;
-            }
+            enemyNear = false;
         }
+        if(!AudioManager.manager.eventRunning)
+        {
+            if (enemyNear)
+            {
+                if (!AudioManager.manager.auxIn)
+                {
+                    auxInSnapshot.TransitionTo(0.5f);
+                    AudioManager.manager.currentAudioMixerSnapshot = auxInSnapshot;
+                    AudioManager.manager.auxIn = true;
+                }
+                else
+                {
+                    if(AudioManager.manager.currentAudioMixerSnapshot == AudioManager.manager.eventSnap)
+                    {
+                        auxInSnapshot.TransitionTo(0.5f);
+                        AudioManager.manager.currentAudioMixerSnapshot = auxInSnapshot;
+                        AudioManager.manager.auxIn = true;
+                    }
+                }
+            }
+            else
+            {
+                if (!AudioManager.manager.auxIn)
+                {
+                    idleSnapshot.TransitionTo(0.5f);
+                    AudioManager.manager.currentAudioMixerSnapshot = idleSnapshot;
+
+                    AudioManager.manager.auxIn = false;
+                }
+                else
+                {
+                    if (AudioManager.manager.currentAudioMixerSnapshot == AudioManager.manager.eventSnap)
+                    {
+                        idleSnapshot.TransitionTo(0.5f);
+                        AudioManager.manager.currentAudioMixerSnapshot = idleSnapshot;
+
+                        AudioManager.manager.auxIn = false;
+                    }
+                }
+            }
+        }   
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +76,7 @@ public class PlayerAudio : MonoBehaviour {
         if (other.CompareTag("Water"))
         {
             audioS.PlayOneShot(splashSound);
-        }   
+        }
         if (other.CompareTag("EnemyZone"))
         {
             auxInSnapshot.TransitionTo(0.5f);
