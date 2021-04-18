@@ -19,6 +19,18 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-7249600392347987256
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AmbIn
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: ef82c447114d6f04b9fbfa002be03105
+  m_FloatValues:
+    8b59da654e0db434884b83c1156f4f5c: -80
+  m_TransitionOverrides: {}
 --- !u!244 &-2547365758154431736
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -45,6 +57,8 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   - {fileID: 3197257705599237579}
+  - {fileID: 4079243835586219109}
+  - {fileID: -7249600392347987256}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -57,7 +71,7 @@ AudioMixerController:
     - 2a26a81952031024fa184d84559c4802
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -7249600392347987256}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -134,6 +148,18 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 6be84a78063aede4b932bc286c7b928a
   m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!245 &4079243835586219109
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AmbIdle
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: af82b6c3f4539c943814f354a0af2ef8
+  m_FloatValues:
+    8b59da654e0db434884b83c1156f4f5c: -80
   m_TransitionOverrides: {}
 --- !u!244 &4093236950391149496
 AudioMixerEffectController:

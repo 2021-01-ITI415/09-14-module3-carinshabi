@@ -1014,6 +1014,11 @@ MonoBehaviour:
   audioS: {fileID: 1089325778}
   idleSnapshot: {fileID: 24500006, guid: c9b2f32cdfe549740ae3148d6fb0fa79, type: 2}
   auxInSnapshot: {fileID: 3197257705599237579, guid: c9b2f32cdfe549740ae3148d6fb0fa79, type: 2}
+  ambIdleSnapshot: {fileID: 4079243835586219109, guid: c9b2f32cdfe549740ae3148d6fb0fa79, type: 2}
+  ambInSnapshot: {fileID: -7249600392347987256, guid: c9b2f32cdfe549740ae3148d6fb0fa79, type: 2}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1090317866
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,11 +18,13 @@ public class PlayerAudio : MonoBehaviour {
     bool enemyNear;
     private void Update()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 10f, transform.forward, 0f, enemyMask);
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 5f, transform.forward, 0f, enemyMask);
         if(hits.Length > 0)
         {
             if (!enemyNear)
             {
+                Debug.Log(hits[0].transform.name);
+                Debug.Log("Set enemy near");
                 auxInSnapshot.TransitionTo(0.5f);
                 enemyNear = true;
             }
@@ -31,6 +33,7 @@ public class PlayerAudio : MonoBehaviour {
         {
             if(enemyNear)
             {
+                idleSnapshot.TransitionTo(0.5f);
                 enemyNear = false;
             }
         }
