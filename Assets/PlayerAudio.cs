@@ -54,7 +54,6 @@ public class PlayerAudio : MonoBehaviour {
                 {
                     idleSnapshot.TransitionTo(0.5f);
                     AudioManager.manager.currentAudioMixerSnapshot = idleSnapshot;
-
                     AudioManager.manager.auxIn = false;
                 }
                 else
@@ -63,7 +62,6 @@ public class PlayerAudio : MonoBehaviour {
                     {
                         idleSnapshot.TransitionTo(0.5f);
                         AudioManager.manager.currentAudioMixerSnapshot = idleSnapshot;
-
                         AudioManager.manager.auxIn = false;
                     }
                 }
