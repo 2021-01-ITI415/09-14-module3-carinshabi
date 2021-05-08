@@ -9,6 +9,9 @@ TagManager:
   - EnemyZone
   - Ambience
   - EventMusic
+  - Item
+  - End
+  - Building
   layers:
   - Default
   - TransparentFX
