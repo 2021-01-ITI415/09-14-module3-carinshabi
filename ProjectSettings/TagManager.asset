@@ -12,6 +12,7 @@ TagManager:
   - Item
   - End
   - Building
+  - Wood
   layers:
   - Default
   - TransparentFX

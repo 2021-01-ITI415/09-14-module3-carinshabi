@@ -10,6 +10,7 @@ public class BoatLogic : MonoBehaviour
     public float moveSpeed, rotateSpeed;
     public GameObject player;
     public CharacterController playerController;
+    public AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -43,7 +44,7 @@ public class BoatLogic : MonoBehaviour
                     moveToPointB = true;
                 }
 
-
+                audioSource.Play();
                 moveBoat = true;//the boat is now able to move to the points
             }
 
@@ -101,6 +102,7 @@ public class BoatLogic : MonoBehaviour
         }
         else
         {
+            audioSource.Stop();
             player.transform.SetParent(null);//the player is no longer a child of the boat
             playerController.enabled = true;//turn the characterController back on so that the player can move again
             canRideBoat = false;//The player has to get off the boat so that they can ride again
